@@ -1,0 +1,16 @@
+{
+  "name": "b10a6-pet-shop",
+  "version": "1.0.0",
+  "description": "**Welcome to Assignment 6 !!!**\r In this assignment You have to create a pet adoption platform where users can browse and adopt pets. We will provides you APIs to fetch pet-related data such as all pets, categories of pets, and specific pet details , pet data based on category",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}
