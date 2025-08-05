@@ -4,9 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>PET SHOPS</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  <body class="lato_font">
+    <header class="max-w-[1440px] mx-auto">
+      <nav class="md:flex justify-between items-center mt-7">
+        <div
+          class="flex flex-1 gap-[7px] items-center justify-center md:justify-start"
+        >
+          <figure>
+            <img src="../images/logo.webp" alt="" />
+          </figure>
+          <h3 class="font-black text-4xl">Peddy</h3>
+        </div>
+        <div class="flex flex-1 gap-[32px] justify-center my-5">
+          <div>Home</div>
+          <div>Shop</div>
+          <div>Contact</div>
+        </div>
+        <div class="flex flex-1 justify-center md:justify-end">
+          <figure>
+            <img class="w-[40px]" src="../images/profile.png" alt="" />
+          </figure>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- banner  -->
+      <section>
+        <div class="text-center mt-10">
+          <h5 class="font-bold text-lg md:text-2xl text-black/60">
+            Bringing Families Together ❤️‍🔥
+          </h5>
+          <h1 class="font-black text-3xl md:text-7xl mt-4 md:leading-20">
+            Your Path to Adoption <br />
+            Starts Here
+          </h1>
+          <p class="mt-6 mb-8 text-sm md:text-base">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking <br />
+            at its layout. The point of using Lorem Ipsum is that it has a.
+          </p>
+          <button
+            class="font-bold text-xl bg-[#0E7A81] text-white px-8 py-4 rounded-lg"
+          >
+            View More
+          </button>
+        </div>
+        <div class="flex justify-center mt-12">
+          <img src="../images/pet.webp" alt="" />
+        </div>
+      </section>
+    </main>
+    <footer></footer>
   </body>
 </html>

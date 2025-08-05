@@ -1,1 +1,5 @@
 @import "tailwindcss";
+.lato_font {
+  font-family: "Lato", sans-serif;
+  font-style: normal;
+}
