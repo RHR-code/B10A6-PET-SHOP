@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="loading.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -54,7 +55,7 @@
           <button
             class="font-bold text-xl bg-[#0E7A81] text-white px-8 py-4 rounded-lg"
           >
-            View More
+            <a href="#pets">View More</a>
           </button>
         </div>
         <div class="flex justify-center mt-12">
@@ -73,45 +74,23 @@
           </p>
         </div>
         <!-- category -->
-        <div class="flex justify-between mb-8">
-          <div
-            class="flex justify-center h-[104px] items-center w-[312px] gap-4 bg-[rgb(14,122,129,.2)] rounded-full border border-[#0E7A81]"
-          >
-            <img src="../images/shiba 1.png" alt="" />
-            <h4 class="font-bold text-2xl">Dogs</h4>
-          </div>
-          <div
-            class="flex justify-center h-[104px] items-center w-[312px] gap-4 bg-[rgb(14,122,129,.2)] rounded-full border border-[#0E7A81]"
-          >
-            <img src="../images/shiba 1.png" alt="" />
-            <h4 class="font-bold text-2xl">Dogs</h4>
-          </div>
-          <div
-            class="flex justify-center h-[104px] items-center w-[312px] gap-4 bg-[rgb(14,122,129,.2)] rounded-full border border-[#0E7A81]"
-          >
-            <img src="../images/shiba 1.png" alt="" />
-            <h4 class="font-bold text-2xl">Dogs</h4>
-          </div>
-          <div
-            class="flex justify-center h-[104px] items-center w-[312px] gap-4 bg-[rgb(14,122,129,.2)] rounded-full border border-[#0E7A81]"
-          >
-            <img src="../images/shiba 1.png" alt="" />
-            <h4 class="font-bold text-2xl">Dogs</h4>
-          </div>
-        </div>
+        <div class="category flex justify-between mb-8"></div>
         <!-- soritng and deal -->
         <div class="flex justify-between items-center mb-8">
           <h5 class="font-black text-2xl">Best Deal For You</h5>
           <button
-            class="font-bold text-xl bg-[#0E7A81] text-white px-8 py-4 rounded-lg"
+            class="sortBtn font-bold text-xl bg-[#0E7A81] text-white px-8 py-4 rounded-lg"
           >
             Sort By Price
           </button>
         </div>
         <!-- all pets -->
-        <div class="flex gap-4">
-          <div class="grid grid-cols-3 gap-5 w-[75%]">
-            <div class="p-5 border border-gray-400 rounded-lg">
+
+        <div id="pets" class="flex relative gap-4">
+          <div class="loader"></div>
+          <!-- pet left side -->
+          <div class="allPetsLeftSide grid grid-cols-3 gap-5 w-[75%]">
+            <!-- <div class="p-5 border border-gray-400 rounded-lg">
               <img class="mb-5" src="../images/Rectangle 1.png" alt="" />
               <h6 class="font-bold text-xl mb-3">Mister Tartosh</h6>
               <p class="flex mb-2">
@@ -142,168 +121,9 @@
                   Details
                 </button>
               </div>
-            </div>
-            <div class="p-5 border border-gray-400 rounded-lg">
-              <img class="mb-5" src="../images/Rectangle 1.png" alt="" />
-              <h6 class="font-bold text-xl mb-3">Mister Tartosh</h6>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/card.png" alt="" /> Breed:
-                Golder retriever
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/calendar.png" alt="" />
-                Birth: 2024
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/femenine.png" alt="" />
-                Gender: Female
-              </p>
-              <p class="flex mb-2">
-                <img
-                  class="w-5 mr-2"
-                  src="../images/dollar-sign.png"
-                  alt=""
-                />Price : 199$
-              </p>
-              <div class="flex justify-around items-center mt-10">
-                <button>
-                  <img class="w-5" src="../images/like.png" alt="" />
-                </button>
-                <button class="font-bold text-lg text-[#0E7A81]">Adopt</button>
-                <button class="font-bold text-lg text-[#0E7A81]">
-                  Details
-                </button>
-              </div>
-            </div>
-            <div class="p-5 border border-gray-400 rounded-lg">
-              <img class="mb-5" src="../images/Rectangle 1.png" alt="" />
-              <h6 class="font-bold text-xl mb-3">Mister Tartosh</h6>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/card.png" alt="" /> Breed:
-                Golder retriever
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/calendar.png" alt="" />
-                Birth: 2024
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/femenine.png" alt="" />
-                Gender: Female
-              </p>
-              <p class="flex mb-2">
-                <img
-                  class="w-5 mr-2"
-                  src="../images/dollar-sign.png"
-                  alt=""
-                />Price : 199$
-              </p>
-              <div class="flex justify-around items-center mt-10">
-                <button>
-                  <img class="w-5" src="../images/like.png" alt="" />
-                </button>
-                <button class="font-bold text-lg text-[#0E7A81]">Adopt</button>
-                <button class="font-bold text-lg text-[#0E7A81]">
-                  Details
-                </button>
-              </div>
-            </div>
-            <div class="p-5 border border-gray-400 rounded-lg">
-              <img class="mb-5" src="../images/Rectangle 1.png" alt="" />
-              <h6 class="font-bold text-xl mb-3">Mister Tartosh</h6>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/card.png" alt="" /> Breed:
-                Golder retriever
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/calendar.png" alt="" />
-                Birth: 2024
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/femenine.png" alt="" />
-                Gender: Female
-              </p>
-              <p class="flex mb-2">
-                <img
-                  class="w-5 mr-2"
-                  src="../images/dollar-sign.png"
-                  alt=""
-                />Price : 199$
-              </p>
-              <div class="flex justify-around items-center mt-10">
-                <button>
-                  <img class="w-5" src="../images/like.png" alt="" />
-                </button>
-                <button class="font-bold text-lg text-[#0E7A81]">Adopt</button>
-                <button class="font-bold text-lg text-[#0E7A81]">
-                  Details
-                </button>
-              </div>
-            </div>
-            <div class="p-5 border border-gray-400 rounded-lg">
-              <img class="mb-5" src="../images/Rectangle 1.png" alt="" />
-              <h6 class="font-bold text-xl mb-3">Mister Tartosh</h6>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/card.png" alt="" /> Breed:
-                Golder retriever
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/calendar.png" alt="" />
-                Birth: 2024
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/femenine.png" alt="" />
-                Gender: Female
-              </p>
-              <p class="flex mb-2">
-                <img
-                  class="w-5 mr-2"
-                  src="../images/dollar-sign.png"
-                  alt=""
-                />Price : 199$
-              </p>
-              <div class="flex justify-around items-center mt-10">
-                <button>
-                  <img class="w-5" src="../images/like.png" alt="" />
-                </button>
-                <button class="font-bold text-lg text-[#0E7A81]">Adopt</button>
-                <button class="font-bold text-lg text-[#0E7A81]">
-                  Details
-                </button>
-              </div>
-            </div>
-            <div class="p-5 border border-gray-400 rounded-lg">
-              <img class="mb-5" src="../images/Rectangle 1.png" alt="" />
-              <h6 class="font-bold text-xl mb-3">Mister Tartosh</h6>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/card.png" alt="" /> Breed:
-                Golder retriever
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/calendar.png" alt="" />
-                Birth: 2024
-              </p>
-              <p class="flex mb-2">
-                <img class="w-5 mr-2" src="../images/femenine.png" alt="" />
-                Gender: Female
-              </p>
-              <p class="flex mb-2">
-                <img
-                  class="w-5 mr-2"
-                  src="../images/dollar-sign.png"
-                  alt=""
-                />Price : 199$
-              </p>
-              <div class="flex justify-around items-center mt-10">
-                <button>
-                  <img class="w-5" src="../images/like.png" alt="" />
-                </button>
-                <button class="font-bold text-lg text-[#0E7A81]">Adopt</button>
-                <button class="font-bold text-lg text-[#0E7A81]">
-                  Details
-                </button>
-              </div>
-            </div>
+            </div> -->
           </div>
+          <!-- pet right side -->
           <div
             class="grid grid-cols-2 w-[25%] bg-amber-300 p-5 border border-gray-400 rounded-lg gap-4 h-fit"
           >
@@ -342,5 +162,6 @@
       </section>
     </main>
     <footer></footer>
+    <script src="main.js"></script>
   </body>
 </html>

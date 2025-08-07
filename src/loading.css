@@ -1,0 +1,36 @@
+/* HTML: <div class="loader"></div> */
+.loader {
+  --s: 15px;
+  width: calc(var(--s) * 2.33);
+  aspect-ratio: 1;
+  display: none;
+  position: absolute;
+  left: 50%;
+  z-index: 100;
+  justify-content: space-between;
+  animation: l29-0 1s infinite;
+}
+.loader::before,
+.loader::after {
+  content: "";
+  width: var(--s);
+  --_g: no-repeat radial-gradient(farthest-side, #000 94%, #0000);
+  background: var(--_g) top, var(--_g) bottom;
+  background-size: 100% var(--s);
+  transform-origin: 50% calc(100% - var(--s) / 2);
+  animation: inherit;
+  animation-name: l29-1;
+}
+.loader::after {
+  --_s: -1;
+}
+@keyframes l29-0 {
+  100% {
+    transform: translateY(calc(var(--s) - 100%));
+  }
+}
+@keyframes l29-1 {
+  100% {
+    transform: rotate(calc(var(--_s, 1) * -180deg));
+  }
+}
