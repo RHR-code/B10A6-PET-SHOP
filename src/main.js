@@ -2,13 +2,14 @@ let allPetsLeftSide = document.querySelector(".allPetsLeftSide");
 let loader = document.querySelector(".loader");
 let categories = document.querySelector(".category");
 let sortBtn = document.querySelector(".sortBtn");
-
+let favouritePet = document.querySelector(".favouritePet");
 let petsArray;
 let sortedAnimal;
+let adoptModal = document.querySelector(".adoptModal");
 
 function addPets(pets) {
   allPetsLeftSide.innerHTML += `
-      <div id="${pets.petId}" class="p-5 border border-gray-400 rounded-lg">
+      <div id="${pets.petId}" class="pet p-5 border border-gray-400 rounded-lg">
                 <img class="mb-5" src=${pets.image} alt="" />
                 <h6 class="font-bold text-xl mb-3">${pets.pet_name}</h6>
                 <p class="flex mb-2">
@@ -31,11 +32,11 @@ function addPets(pets) {
                   />Price : ${pets.price}$
                 </p>
                 <div class="flex justify-around items-center mt-10">
-                  <button>
+                  <button class ="like">
                     <img class="w-5" src="../images/like.png" alt="" />
                   </button>
-                  <button class="font-bold text-lg text-[#0E7A81]">Adopt</button>
-                  <button class="font-bold text-lg text-[#0E7A81]">
+                  <button class="adopt font-bold text-lg text-[#0E7A81]">Adopt</button>
+                  <button class="details font-bold text-lg text-[#0E7A81]">
                     Details
                   </button>
                 </div>
@@ -56,10 +57,9 @@ let allPets = async () => {
     let petData = await gettingPetsData.json();
     petsArray = petData.pets;
     petsArray.map((pets) => {
-      console.log("from all pets", pets);
-
       addPets(pets);
     });
+    likeAdoptDetails();
   } catch (error) {
     console.log(error);
   } finally {
@@ -74,7 +74,6 @@ let category = async () => {
   );
   let categoryData = await getCategory.json();
   let category = categoryData.categories;
-  console.log(category);
   category.map((item) => {
     categories.innerHTML += `
   <div
@@ -89,6 +88,7 @@ let category = async () => {
   });
   let categoriesDiv = document.querySelectorAll(".category div");
 
+  // choosing pets by category
   categoriesDiv.forEach((div) => {
     div.addEventListener("click", async (e) => {
       categoriesDiv.forEach((val) => {
@@ -131,6 +131,7 @@ let category = async () => {
 
 window.onload = category();
 
+// sorting pets by price
 let sortingPets = async () => {
   petsArray.sort(function (a, b) {
     return b.price - a.price;
@@ -150,3 +151,78 @@ let sortingPets = async () => {
 };
 
 sortBtn.addEventListener("click", sortingPets);
+
+function likeAdoptDetails() {
+  let like = document.querySelectorAll(".like");
+  let adopt = document.querySelectorAll(".adopt");
+  let details = document.querySelectorAll(".details");
+
+  addLike(like);
+  addAdopt(adopt);
+}
+
+function addLike(likes) {
+  likes.forEach((like) => {
+    like.addEventListener("click", (e) => {
+      parentOfLike = e.target.closest(".pet");
+      let petImg = parentOfLike.querySelector("img").src;
+      let petName = parentOfLike.querySelector("h6").innerText;
+      let petBreed = parentOfLike.querySelector("p").innerText.split(":")[1];
+      let petId = parentOfLike.id;
+      if (e.target.src.includes("like.png")) {
+        e.target.src = "../images/like_1.png";
+        addFavourite(petImg, petName, petBreed, petId);
+      } else {
+        e.target.src = "../images/like.png";
+        let divFromFav = favouritePet.querySelectorAll("div");
+        divFromFav.forEach((div) => {
+          if (petId === div.id) {
+            div.classList.add("hidden");
+          }
+        });
+      }
+    });
+  });
+  function addFavourite(petImg, petName, petBreed, petId) {
+    favouritePet.innerHTML += `
+  <div id=${petId} class="text-center">
+    <img src=${petImg} alt="" />
+    <h6 class="font-bold text-lg mt-2">${petName}</h6>
+    <p class="text-sm">${petBreed}</p>
+  </div>
+  `;
+  }
+}
+
+function addAdopt(adopt) {
+  adopt.forEach((val) => {
+    val.addEventListener("click", (e) => {
+      adoptModal.classList.toggle("hidden");
+      let count = 3;
+      isAdopted = true;
+      adoptModal.innerHTML = `
+      <div
+        class=" fixed inset-0 bg-black/50 h-full flex justify-center items-center"
+      >
+        <div
+          class="flex flex-col items-center pt-14 rounded-xl bg-white w-[400px] h-[200px]"
+        >
+          <h1 class="font-black text-2xl">The Adoption is Processing</h1>
+          <h2 id="timer" class="font-bold text-xl">${count}s</h2>
+        </div>
+        </div>
+        
+        `;
+      let timer = document.getElementById("timer");
+      for (let i = 2; i >= 0; i--) {
+        setTimeout(() => {
+          timer.innerText = `${i}s`;
+          if (i === 0) {
+            e.target.innerText = "Adopted";
+            adoptModal.classList.add("hidden");
+          }
+        }, (3 - i) * 1000);
+      }
+    });
+  });
+}
