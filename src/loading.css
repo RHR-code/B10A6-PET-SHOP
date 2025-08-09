@@ -3,8 +3,8 @@
   --s: 15px;
   width: calc(var(--s) * 2.33);
   aspect-ratio: 1;
-  display: none;
   position: absolute;
+  /* display: none; */
   left: 50%;
   z-index: 100;
   justify-content: space-between;
