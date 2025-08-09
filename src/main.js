@@ -133,7 +133,7 @@ let category = async () => {
       } finally {
         loader.style.display = "none";
       }
-    }); //there
+    });
   });
 };
 
@@ -154,6 +154,7 @@ let sortingPets = async () => {
     allPetsLeftSide.innerHTML = "";
     petsArray.forEach((pet) => {
       addPets(pet);
+      likeAdoptDetails();
     });
 
     sortedAnimal.sort(function (a, b) {
@@ -162,6 +163,7 @@ let sortingPets = async () => {
     allPetsLeftSide.innerHTML = "";
     sortedAnimal.forEach((pet) => {
       addPets(pet);
+      likeAdoptDetails();
     });
   } catch (error) {
     console.log(error);
